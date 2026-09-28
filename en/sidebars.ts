@@ -309,6 +309,7 @@ const sidebars: SidebarsConfig = {
             'develop/troubleshooting/strand-dump-analysis',
             'develop/troubleshooting/profiling',
             'develop/troubleshooting/ide-troubleshooting',
+            'develop/troubleshooting/ballerina-2201-14-compatibility',
           ],
         },
         // 6.9 Tools
