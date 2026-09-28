@@ -66,7 +66,7 @@ VS Code updates extensions automatically by default, which reinstalls the curren
 
 The editor shows **Your project dependencies need to be updated.** when the integration you open has dependencies that were set up with a Ballerina version earlier than 2201.14.0.
 
-Integrations lock the exact version of each dependency in `Dependencies.toml`, so they keep using those versions until you update them. Dependencies set up with an earlier Ballerina version don't work with Ballerina 2201.14.0. The `distribution-version` field in `Dependencies.toml` records the Ballerina version that set them up:
+Integrations lock the exact version of each dependency in `Dependencies.toml`, so they keep using those versions until you update them. Some of the dependencies set up with an earlier Ballerina version may be incompatible with Ballerina 2201.14.0. Newer releases of those packages fix the incompatibilities, and updating the dependencies picks them up. The `distribution-version` field in `Dependencies.toml` records the Ballerina version that set them up:
 
 ```toml
 [ballerina]
