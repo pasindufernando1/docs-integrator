@@ -12,7 +12,7 @@ WSO2 Integrator 5.1.0, the WSO2 Integrator extension 1.2.0, and the Ballerina ex
 | The editor shows | Why | Go to |
 |---|---|---|
 | **WSO2 Integrator cannot start** or **Ballerina Visualizer cannot start** | Your Ballerina version is earlier than 2201.14.0. | [Ballerina version is incompatible](#ballerina-version-is-incompatible) |
-| **Your project dependencies need to be updated.** | Your integration's dependencies were set up with a Ballerina version earlier than 2201.14.0. | [Project dependencies need to be updated](#project-dependencies-need-to-be-updated) |
+| **Your project dependencies need to be updated** | Your integration's dependencies were set up with a Ballerina version earlier than 2201.14.0. | [Project dependencies need to be updated](#project-dependencies-need-to-be-updated) |
 
 Before you update, read [What changes when you update](#what-changes-when-you-update).
 
@@ -29,7 +29,7 @@ You can either update Ballerina, or keep your current Ballerina version and swit
 ### Update Ballerina
 
 1. On the screen, click **Update Ballerina**.
-2. Wait for the update to finish. VS Code reloads the window when it's done.
+2. Wait for the update to finish. VS Code shows the progress and reloads the window when it's done. If the update fails, VS Code shows the error and the **cannot start** screen comes back, so you can try again.
 
     If Ballerina is installed in a location that needs administrator rights, VS Code opens a terminal with the update command on macOS and Linux, or an administrator prompt on Windows. Complete the update there, then reload the VS Code window.
 
@@ -64,9 +64,9 @@ VS Code updates extensions automatically by default, which reinstalls the curren
 
 ## Project dependencies need to be updated
 
-The editor shows **Your project dependencies need to be updated.** when the integration you open has dependencies that were set up with a Ballerina version earlier than 2201.14.0.
+The editor shows **Your project dependencies need to be updated** when the integration you open has dependencies that were set up with a Ballerina version earlier than 2201.14.0.
 
-Integrations lock the exact version of each dependency in `Dependencies.toml`, so they keep using those versions until you update them. Some of the dependencies set up with an earlier Ballerina version may be incompatible with Ballerina 2201.14.0. Newer releases of those packages fix the incompatibilities, and updating the dependencies picks them up. The `distribution-version` field in `Dependencies.toml` records the Ballerina version that set them up:
+Integrations lock the exact version of each dependency in `Dependencies.toml`, so they keep using those versions until you update them. Some of the dependencies set up with an earlier Ballerina version are incompatible with Ballerina 2201.14.0. Newer releases of those packages fix the incompatibilities, and updating the dependencies picks them up. The `distribution-version` field in `Dependencies.toml` records the Ballerina version that set them up:
 
 ```toml
 [ballerina]
@@ -74,14 +74,16 @@ dependencies-toml-version = "2"
 distribution-version = "2201.12.3"
 ```
 
-In a workspace, each package has its own `Dependencies.toml`, and the editor checks every package. Running or debugging the integration also opens this screen until the dependencies are updated.
+Only packages that set `sticky = true` under `[build-options]` in `Ballerina.toml` are checked. Integrations are created with it; a package without it picks up newer versions on its next build.
+
+In a workspace, each package has its own `Dependencies.toml`, and the editor checks every package and lists the ones it will update. Running or debugging the integration also opens this screen until the dependencies are updated.
 
 You can either update the dependencies, or keep them as they are by switching to a matching earlier setup.
 
 ### Update the dependencies
 
 1. On the screen, click **Update Dependencies**.
-2. Wait for the update to finish. The screen shows the progress, and opens your integration when every package is updated.
+2. Wait for the update to finish. This can take a few minutes. The screen shows the progress, with a **Show output** link to the build output, and opens your integration when every package is updated.
 
 For each package with outdated dependencies, the update:
 
@@ -100,7 +102,7 @@ bal build --sticky=false
 
 #### If the update fails
 
-The screen shows the reason in red, with a **Show Output** button that opens the build output.
+The screen shows the reason in red, with a **Show output** link that opens the build output.
 
 - **Compile errors**: fix the errors shown in the build output, then click **Update Dependencies** again.
 - **Ballerina Central couldn't be reached**: check your internet connection and any proxy settings, then click **Update Dependencies** again.
