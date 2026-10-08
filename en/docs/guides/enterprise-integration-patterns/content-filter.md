@@ -2,7 +2,7 @@
 title: Content Filter
 description: "Implement the Content Filter pattern with WSO2 Integrator."
 sidebar_position: 21
-slug: /develop-and-test/integration-patterns/content-filter
+slug: /guides/enterprise-integration-patterns/content-filter
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example receives detailed reimbursement templates that include descriptive 
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `DetailedReimbursementTemplate[]` payload.
-2. Add an HTTP client connection for the Xero API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `DetailedReimbursementTemplate[]` payload.
+2. Add an HTTP client connection for the Xero API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. Add a data mapper (`filterReimbursements`) that maps `DetailedReimbursementTemplate` to `ReimbursementTemplate`, keeping only `reimbursementTypeID` and `fixedAmount`. This is the content filter.
 4. Post the filtered list to the Xero pay template endpoint and return the result.
 
@@ -34,7 +34,7 @@ The flow projects each reimbursement template down to the two fields the payroll
 
 <PatternImage src="/img/eip-patterns/content_filter_flow.png" alt="Content Filter flow in the WSO2 Integrator visual designer" width={530} />
 
-Because `filterReimbursements` is a datamapper function, WSO2 Integrator opens it in the visual [Data Mapper](../integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md). The input `DetailedReimbursementTemplate` carries three fields, but the output keeps only `reimbursementTypeID` and `fixedAmount`. `reimbursementTypeName` has no link, so it is dropped:
+Because `filterReimbursements` is a datamapper function, WSO2 Integrator opens it in the visual [Data Mapper](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md). The input `DetailedReimbursementTemplate` carries three fields, but the output keeps only `reimbursementTypeID` and `fixedAmount`. `reimbursementTypeName` has no link, so it is dropped:
 
 <PatternImage src="/img/eip-patterns/content_filter_datamapper.png" alt="Content Filter data mapper in WSO2 Integrator" width={1006} />
 

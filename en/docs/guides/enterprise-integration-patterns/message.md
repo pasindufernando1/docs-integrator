@@ -2,7 +2,7 @@
 title: Message
 description: "Implement the Message pattern with WSO2 Integrator."
 sidebar_position: 1
-slug: /develop-and-test/integration-patterns/message
+slug: /guides/enterprise-integration-patterns/message
 sidebar_custom_props: { "separatorBefore": "Messaging Systems" }
 ---
 
@@ -27,8 +27,8 @@ This example builds a message that carries the details of a customer satisfactio
 <TabItem value="ui" label="Visual Designer" default>
 
 1. Define the message structure as a record type with the [Type Panel](../../editor/panels/type-panel.md). Here, `SurveyUpdateRequest` names the fields the two applications agree on, with a type for each.
-2. Create an [automation](../integration-artifacts/automation.md#creating-an-automation) to run the flow.
-3. Add an HTTP client connection that points to the SurveyMonkey API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+2. Create an [automation](../../develop-and-test/integration-artifacts/automation.md#creating-an-automation) to run the flow.
+3. Add an HTTP client connection that points to the SurveyMonkey API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 4. In the flow, declare a variable of type `SurveyUpdateRequest` and assign the survey details. This record instance is the message.
 5. Add the HTTP `put` action on the connection to transmit the message to the survey resource path.
 

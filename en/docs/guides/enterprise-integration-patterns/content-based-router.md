@@ -2,7 +2,7 @@
 title: Content-Based Router
 description: "Implement the Content-Based Router pattern with WSO2 Integrator."
 sidebar_position: 14
-slug: /develop-and-test/integration-patterns/content-based-router
+slug: /guides/enterprise-integration-patterns/content-based-router
 sidebar_custom_props: { "separatorBefore": "Message Routing" }
 ---
 
@@ -26,8 +26,8 @@ This example routes shipment tracking requests by the destination country in the
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the country and tracking number as path parameters.
-2. Add an HTTP client connection for the DHL API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the country and tracking number as path parameters.
+2. Add an HTTP client connection for the DHL API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) on the routing field with the condition `country is UK`.
 4. In the **True** branch, call the DHL Parcel UK tracking endpoint and return the shipment status.
 5. In the **False** branch, call the DHL Deutsche Post International tracking endpoint and return the event status.

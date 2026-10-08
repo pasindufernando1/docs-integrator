@@ -2,7 +2,7 @@
 title: Channel Adapter
 description: "Implement the Channel Adapter pattern with WSO2 Integrator."
 sidebar_position: 7
-slug: /develop-and-test/integration-patterns/channel-adapter
+slug: /guides/enterprise-integration-patterns/channel-adapter
 ---
 
 import TabItem from '@theme/TabItem';
@@ -29,8 +29,8 @@ The Jira connector is the channel adapter: it exposes the external Jira API to t
 
 <PatternImage src="/img/eip-patterns/channel_adapter_design.png" alt="Channel Adapter design canvas in WSO2 Integrator" width={706} />
 
-1. Create an [automation](../integration-artifacts/automation.md#creating-an-automation) to run the flow.
-2. Add a Jira connection with the username and password kept as [configurable values](../../reference/configuration-reference.md#configurable-variables). See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [automation](../../develop-and-test/integration-artifacts/automation.md#creating-an-automation) to run the flow.
+2. Add a Jira connection with the username and password kept as [configurable values](../../reference/configuration-reference.md#configurable-variables). See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, call the `getProject` operation on the Jira connection to bring the project into the integration as a typed message.
 
 The flow calls the `getProject` operation on the Jira connection; the connector handles the API details and returns a typed result:

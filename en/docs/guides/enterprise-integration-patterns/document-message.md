@@ -2,7 +2,7 @@
 title: Document Message
 description: "Implement the Document Message pattern with WSO2 Integrator."
 sidebar_position: 10
-slug: /develop-and-test/integration-patterns/document-message
+slug: /guides/enterprise-integration-patterns/document-message
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example transfers a CSV document of sales leads to the Zoho CRM bulk upload
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `CsvRequest` payload identifying the organization and file.
-2. Add an HTTP client connection for the Zoho API with a retry configuration. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `CsvRequest` payload identifying the organization and file.
+2. Add an HTTP client connection for the Zoho API with a retry configuration. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, build a request, add the organization and feature headers, and set the CSV file from the FTP incoming directory as a multipart payload. This is the document message.
 4. Post the request to the Zoho bulk upload endpoint and return the `ZohoResponse`.
 

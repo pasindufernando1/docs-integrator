@@ -2,7 +2,7 @@
 title: Command Message
 description: "Implement the Command Message pattern with WSO2 Integrator."
 sidebar_position: 9
-slug: /develop-and-test/integration-patterns/command-message
+slug: /guides/enterprise-integration-patterns/command-message
 sidebar_custom_props: { "separatorBefore": "Message Construction" }
 ---
 
@@ -26,8 +26,8 @@ This example receives a user group creation request and sends it as a command me
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `UserGroupCreateRequest` payload.
-2. Add an HTTP client connection for the Slack API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `UserGroupCreateRequest` payload.
+2. Add an HTTP client connection for the Slack API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, post the command message to the `usergroups.create` operation with the `x-www-form-urlencoded` media type.
 4. Return the `UserGroupCreationResponse` to the caller.
 

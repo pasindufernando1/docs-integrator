@@ -2,7 +2,7 @@
 title: Message Sequence
 description: "Implement the Message Sequence pattern with WSO2 Integrator."
 sidebar_position: 12
-slug: /develop-and-test/integration-patterns/message-sequence
+slug: /guides/enterprise-integration-patterns/message-sequence
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example downloads a large file from Amazon S3 as a sequence of ranged reque
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [automation](../integration-artifacts/automation.md#creating-an-automation) to run the flow.
-2. Add an HTTP client connection for the S3 bucket. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [automation](../../develop-and-test/integration-artifacts/automation.md#creating-an-automation) to run the flow.
+2. Add an HTTP client connection for the S3 bucket. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, send a `head` request to read the `Content-Length` header and compute the number of chunks.
 4. Add a [Foreach node](../../editor/canvases/flow-canvas/node-palette.md#foreach) over the chunk indexes. In each iteration, set the `Range` header for the chunk, request that range, and append the bytes to the local file.
 

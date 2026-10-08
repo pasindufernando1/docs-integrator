@@ -2,7 +2,7 @@
 title: Messaging Bridge
 description: "Implement the Messaging Bridge pattern with WSO2 Integrator."
 sidebar_position: 8
-slug: /develop-and-test/integration-patterns/messaging-bridge
+slug: /guides/enterprise-integration-patterns/messaging-bridge
 ---
 
 import TabItem from '@theme/TabItem';
@@ -29,8 +29,8 @@ The [design canvas](../../editor/views/integration-view.md#design-canvas) shows 
 
 <PatternImage src="/img/eip-patterns/messaging_bridge_design.png" alt="Messaging Bridge design canvas in WSO2 Integrator" width={760} />
 
-1. Create a [GraphQL service](../integration-artifacts/integration-as-api/graphql.md#creating-a-graphql-service) with a `project` query and a `createProject` mutation.
-2. Add an HTTP client connection for the Zoho Books REST API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create a [GraphQL service](../../develop-and-test/integration-artifacts/integration-as-api/graphql.md#creating-a-graphql-service) with a `project` query and a `createProject` mutation.
+2. Add an HTTP client connection for the Zoho Books REST API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the query flow, call the Zoho Books `get` endpoint for the requested project and return the typed `Project`.
 4. In the mutation flow, post the `ProjectRequest` to the Zoho Books `projects` endpoint and return the created `Project`.
 

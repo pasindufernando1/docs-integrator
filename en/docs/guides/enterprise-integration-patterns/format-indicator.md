@@ -2,7 +2,7 @@
 title: Format Indicator
 description: "Implement the Format Indicator pattern with WSO2 Integrator."
 sidebar_position: 13
-slug: /develop-and-test/integration-patterns/format-indicator
+slug: /guides/enterprise-integration-patterns/format-indicator
 ---
 
 import TabItem from '@theme/TabItem';
@@ -26,7 +26,7 @@ This example accepts patient data in two formats. Version `1.0` carries flat `fi
 <TabItem value="ui" label="Visual Designer" default>
 
 1. Define the `PatientReqV1` and `PatientReqV2` record types, each with a fixed `version` field, and the `PatientReq` union type.
-2. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts a `PatientReq` payload.
+2. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts a `PatientReq` payload.
 3. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) that checks whether the request is a `PatientReqV1`.
 4. In each branch, map the versioned request into the current `Patient` format.
 5. Post the converted patient to the downstream patient service connection.
@@ -39,7 +39,7 @@ The [Type Canvas](../../editor/canvases/type-canvas.md) shows the format indicat
 
 <PatternImage src="/img/eip-patterns/format_indicator_types.png" alt="Format Indicator Type Canvas view in WSO2 Integrator" width={760} />
 
-The version-1 conversion is written as the datamapper function `toPatient`, so WSO2 Integrator opens it in the visual [Data Mapper](../integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md): `dob` and `diagnosis` map straight across, while `firstName` and `lastName` combine into `fullName`, a [many-to-one mapping](../integration-artifacts/supportive-artifacts/data-mapper/mapping-capabilities.md#many-to-one-mapping):
+The version-1 conversion is written as the datamapper function `toPatient`, so WSO2 Integrator opens it in the visual [Data Mapper](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md): `dob` and `diagnosis` map straight across, while `firstName` and `lastName` combine into `fullName`, a [many-to-one mapping](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/mapping-capabilities.md#many-to-one-mapping):
 
 <PatternImage src="/img/eip-patterns/format_indicator_datamapper.png" alt="Format Indicator data mapper in WSO2 Integrator" width={1006} />
 

@@ -2,7 +2,7 @@
 title: Splitter
 description: "Implement the Splitter pattern with WSO2 Integrator."
 sidebar_position: 16
-slug: /develop-and-test/integration-patterns/splitter
+slug: /guides/enterprise-integration-patterns/splitter
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example receives a single reminder request that contains multiple events, e
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `ReminderRequest` payload.
-2. Add an HTTP client connection for the Twilio API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `ReminderRequest` payload.
+2. Add an HTTP client connection for the Twilio API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. Add a [Foreach node](../../editor/canvases/flow-canvas/node-palette.md#foreach) over `request.events`, and a nested **Foreach** over `event.attendees`.
 4. Inside the inner loop, call the `sendReminder` function, which builds the personalized message for one attendee and posts it to the Twilio messages endpoint.
 

@@ -2,7 +2,7 @@
 title: Message Router
 description: "Implement the Message Router pattern with WSO2 Integrator."
 sidebar_position: 3
-slug: /develop-and-test/integration-patterns/message-router
+slug: /guides/enterprise-integration-patterns/message-router
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example exposes a shipment tracking service that routes each request to a d
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the country and tracking number as path parameters.
-2. Add an HTTP client connection for the DHL API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the country and tracking number as path parameters.
+2. Add an HTTP client connection for the DHL API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) with the condition `country is UK`.
 4. In the **True** branch, call the DHL Parcel UK tracking endpoint and return the shipment status.
 5. In the **False** branch, call the DHL Deutsche Post International tracking endpoint and return the event status.

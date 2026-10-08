@@ -2,7 +2,7 @@
 title: Message Translator
 description: "Implement the Message Translator pattern with WSO2 Integrator."
 sidebar_position: 4
-slug: /develop-and-test/integration-patterns/message-translator
+slug: /guides/enterprise-integration-patterns/message-translator
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,16 +25,16 @@ This example accepts sales opportunity data from a CRM-style analytics endpoint 
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `SalesData` payload.
-2. Add an HTTP client connection for the QuickBooks API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
-3. [Add a data mapper](../integration-artifacts/supportive-artifacts/data-mapper/access-paths/reusable.md) that maps `SalesData` to `QuickBooksInvoice`, converting each opportunity into an invoice entry.
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `SalesData` payload.
+2. Add an HTTP client connection for the QuickBooks API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+3. [Add a data mapper](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/access-paths/reusable.md) that maps `SalesData` to `QuickBooksInvoice`, converting each opportunity into an invoice entry.
 4. Call the QuickBooks connection with the translated message.
 
 The flow calls the `translate` function to convert the sales data into the QuickBooks invoice format, then posts it:
 
 <PatternImage src="/img/eip-patterns/message_translator_flow.png" alt="Message Translator flow in the WSO2 Integrator visual designer" width={530} />
 
-The [Data Mapper](../integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md) gives this conversion a visual view, which comes in handy for message translations: the `SalesData` fields on the left link to the `QuickBooksInvoice` fields on the right, and an [array mapping](../integration-artifacts/supportive-artifacts/data-mapper/array-mappings/array-mappings.md) turns each `Opportunity` into an `Invoice`:
+The [Data Mapper](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md) gives this conversion a visual view, which comes in handy for message translations: the `SalesData` fields on the left link to the `QuickBooksInvoice` fields on the right, and an [array mapping](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/array-mappings/array-mappings.md) turns each `Opportunity` into an `Invoice`:
 
 <PatternImage src="/img/eip-patterns/message_translator_datamapper.png" alt="Message Translator data mapper in WSO2 Integrator" width={1006} />
 

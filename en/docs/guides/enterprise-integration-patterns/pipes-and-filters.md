@@ -2,7 +2,7 @@
 title: Pipes and Filters
 description: "Implement the Pipes and Filters pattern with WSO2 Integrator."
 sidebar_position: 2
-slug: /develop-and-test/integration-patterns/pipes-and-filters
+slug: /guides/enterprise-integration-patterns/pipes-and-filters
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example exposes a service that returns the top-performing employees. The fl
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the result count.
-2. Add an HTTP client connection for the Firebase datastore. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the result count.
+2. Add an HTTP client connection for the Firebase datastore. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, call the connection to retrieve the `EmployeePerformance[]` records.
 4. Add a query that chains the processing steps: a `let` clause to compute the weighted performance score, a `where` clause to keep scores above `7.5`, `limit` and `order by` clauses, and a `select` clause that builds the `TopPerformer` result.
 5. Return the query result from the resource.

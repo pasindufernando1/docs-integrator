@@ -2,7 +2,7 @@
 title: Message Store
 description: "Implement the Message Store pattern with WSO2 Integrator."
 sidebar_position: 24
-slug: /develop-and-test/integration-patterns/message-store
+slug: /guides/enterprise-integration-patterns/message-store
 sidebar_custom_props: { "separatorBefore": "System Management" }
 ---
 
@@ -30,8 +30,8 @@ The [design canvas](../../editor/views/integration-view.md#design-canvas) shows 
 
 <PatternImage src="/img/eip-patterns/message_store_design.png" alt="Message Store design canvas in WSO2 Integrator" width={760} />
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the address as a query parameter.
-2. Add HTTP client connections for the Google Geocoding API and the Firebase datastore. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `get` resource that accepts the address as a query parameter.
+2. Add HTTP client connections for the Google Geocoding API and the Firebase datastore. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, read the stored result for the address from Firebase and return it when found.
 4. On a store miss, call the geocoding API, start the `storeAddress` function asynchronously to persist the response, and return the geocode to the caller without waiting for the store write.
 

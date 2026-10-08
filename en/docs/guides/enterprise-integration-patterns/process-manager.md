@@ -2,7 +2,7 @@
 title: Process Manager
 description: "Implement the Process Manager pattern with WSO2 Integrator."
 sidebar_position: 19
-slug: /develop-and-test/integration-patterns/process-manager
+slug: /guides/enterprise-integration-patterns/process-manager
 ---
 
 import TabItem from '@theme/TabItem';
@@ -29,8 +29,8 @@ The [design canvas](../../editor/views/integration-view.md#design-canvas) shows 
 
 <PatternImage src="/img/eip-patterns/process_manager_design.png" alt="Process Manager design canvas in WSO2 Integrator" width={760} />
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `OrderRequest` payload.
-2. Add HTTP client connections for Shopify, FedEx, DHL Express, and SendGrid. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `OrderRequest` payload.
+2. Add HTTP client connections for Shopify, FedEx, DHL Express, and SendGrid. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, post the order to Shopify and capture the `OrderResponse`. This intermediate result drives the next step.
 4. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) on the shipping country: create a FedEx shipment for United States orders, and a DHL shipment otherwise, capturing the tracking number from either branch.
 5. Start the `sendConfirmationMail` step asynchronously so the customer notification does not block the process.

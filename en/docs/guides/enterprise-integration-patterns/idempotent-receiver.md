@@ -2,7 +2,7 @@
 title: Idempotent Receiver
 description: "Implement the Idempotent Receiver pattern with WSO2 Integrator."
 sidebar_position: 23
-slug: /develop-and-test/integration-patterns/idempotent-receiver
+slug: /guides/enterprise-integration-patterns/idempotent-receiver
 sidebar_custom_props: { "separatorBefore": "Messaging Endpoints" }
 ---
 
@@ -26,7 +26,7 @@ This example receives order status updates that may be delivered more than once.
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `put` resource keyed by the `orderId` path parameter.
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `put` resource keyed by the `orderId` path parameter.
 2. In the flow, look up the recorded status for the order in the status map.
 3. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) comparing the recorded status with the incoming status.
 4. When they match, return `204 No Content`, acknowledging the duplicate without reprocessing. Otherwise record the new status and return `201 Created`.

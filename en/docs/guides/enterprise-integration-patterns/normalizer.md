@@ -2,7 +2,7 @@
 title: Normalizer
 description: "Implement the Normalizer pattern with WSO2 Integrator."
 sidebar_position: 22
-slug: /develop-and-test/integration-patterns/normalizer
+slug: /guides/enterprise-integration-patterns/normalizer
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example accepts support tickets as either JSON or XML. The service detects 
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts a `json|xml` payload.
-2. Add an HTTP client connection for the Zendesk API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts a `json|xml` payload.
+2. Add an HTTP client connection for the Zendesk API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) that checks whether the payload is JSON.
 4. In each branch, extract the subject and comment from the format at hand and call the `normalize` function to build the common ticket structure.
 5. Post the normalized ticket to the Zendesk tickets endpoint and return the ticket URL.

@@ -2,7 +2,7 @@
 title: Point-to-Point Channel
 description: "Implement the Point-to-Point Channel pattern with WSO2 Integrator."
 sidebar_position: 6
-slug: /develop-and-test/integration-patterns/point-to-point-channel
+slug: /guides/enterprise-integration-patterns/point-to-point-channel
 sidebar_custom_props: { "separatorBefore": "Messaging Channels" }
 ---
 
@@ -30,8 +30,8 @@ The [design canvas](../../editor/views/integration-view.md#design-canvas) shows 
 
 <PatternImage src="/img/eip-patterns/point_to_point_channel_design.png" alt="Point-to-Point Channel design canvas in WSO2 Integrator" width={646} />
 
-1. Create an [automation](../integration-artifacts/automation.md#creating-an-automation) to run the flow.
-2. Add an HTTP client connection that points to the Zuora API. This connection is the point-to-point channel. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [automation](../../develop-and-test/integration-artifacts/automation.md#creating-an-automation) to run the flow.
+2. Add an HTTP client connection that points to the Zuora API. This connection is the point-to-point channel. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, declare a variable holding the product details.
 4. Add the HTTP `post` action on the connection to send the product to the single receiver and capture the `ProductCreationResponse`.
 

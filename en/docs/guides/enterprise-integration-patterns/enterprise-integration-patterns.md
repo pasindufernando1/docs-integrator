@@ -1,12 +1,12 @@
 ---
 sidebar_position: 0
 sidebar_label: Overview
-title: Apply Integration Patterns
+title: Enterprise Integration Patterns
 description: Reusable enterprise integration patterns and how to implement them with WSO2 Integrator.
-slug: /develop-and-test/integration-patterns
+slug: /guides/enterprise-integration-patterns
 ---
 
-# Apply Integration Patterns
+# Enterprise Integration Patterns
 
 Enterprise Integration Patterns (EIPs) are the accepted solutions to recurring problems in enterprise integration. They give integration architects a common language for describing how applications exchange messages, and a proven template for solving each class of problem.
 
@@ -65,7 +65,7 @@ How a message finds its way from the sender to the correct receiver or receivers
 
 ## Message Transformation
 
-How the content of a message is changed so the receiver gets the data it needs in the shape it expects. These transformations can be built without writing conversion code using WSO2 Integrator's visual [Data Mapper](../integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md).
+How the content of a message is changed so the receiver gets the data it needs in the shape it expects. These transformations can be built without writing conversion code using WSO2 Integrator's visual [Data Mapper](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md).
 
 | Pattern | Description |
 |---------|-------------|

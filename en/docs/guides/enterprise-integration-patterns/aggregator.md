@@ -2,7 +2,7 @@
 title: Aggregator
 description: "Implement the Aggregator pattern with WSO2 Integrator."
 sidebar_position: 17
-slug: /develop-and-test/integration-patterns/aggregator
+slug: /guides/enterprise-integration-patterns/aggregator
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example collects survey form submissions that arrive one section at a time.
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the survey section payload and the `userId` correlation header.
-2. Add an HTTP client connection for the survey submission API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the survey section payload and the `userId` correlation header.
+2. Add an HTTP client connection for the survey submission API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, look up the user's partial submissions in the aggregation map by `userId`.
 4. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if): when no entry exists, store the first section; otherwise append the new section.
 5. When the stored sections reach the completeness condition (three sections), post the combined survey to the submission endpoint and remove the entry from the map.

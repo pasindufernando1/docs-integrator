@@ -2,7 +2,7 @@
 title: Message Endpoint
 description: "Implement the Message Endpoint pattern with WSO2 Integrator."
 sidebar_position: 5
-slug: /develop-and-test/integration-patterns/message-endpoint
+slug: /guides/enterprise-integration-patterns/message-endpoint
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,7 +25,7 @@ This example exposes a currency conversion application through an HTTP endpoint.
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) on a listener. This is the message endpoint that connects the application to the channel.
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) on a listener. This is the message endpoint that connects the application to the channel.
 2. Add a `get` resource that accepts the base currency, target currency, and amount as typed query parameters.
 3. In the flow, look up the exchange rates and compute the converted amount.
 4. Return the converted value from the resource.

@@ -2,7 +2,7 @@
 title: Routing Slip
 description: "Implement the Routing Slip pattern with WSO2 Integrator."
 sidebar_position: 18
-slug: /develop-and-test/integration-patterns/routing-slip
+slug: /guides/enterprise-integration-patterns/routing-slip
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,7 +25,7 @@ This example processes retail payments where the applicable discount steps diffe
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `PaymentRequest` payload.
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `PaymentRequest` payload.
 2. In the flow, call the `lookupMessageSlip` function: it checks the loyalty and mobile point memberships for the customer and returns the routing slip for this message.
 3. Attach the slip to the message by building a `Message` record from the request and the slip.
 4. Add an [If node](../../editor/canvases/flow-canvas/node-palette.md#if) that forwards the message to the point-handler service when the slip is not empty.

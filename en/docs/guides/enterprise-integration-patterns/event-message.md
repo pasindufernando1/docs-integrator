@@ -2,7 +2,7 @@
 title: Event Message
 description: "Implement the Event Message pattern with WSO2 Integrator."
 sidebar_position: 11
-slug: /develop-and-test/integration-patterns/event-message
+slug: /guides/enterprise-integration-patterns/event-message
 ---
 
 import TabItem from '@theme/TabItem';
@@ -25,8 +25,8 @@ This example receives an incident report and transmits it as an event message: a
 <PatternImplementationTabs>
 <TabItem value="ui" label="Visual Designer" default>
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `IncidentRequest` payload.
-2. Add an HTTP client connection for the Twilio API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `IncidentRequest` payload.
+2. Add an HTTP client connection for the Twilio API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, build the event text from the incident description, date, and time.
 4. URL-encode the sender, recipient, and body fields, set them as a form-encoded payload, and post the event message to the Twilio messages endpoint.
 

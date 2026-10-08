@@ -2,7 +2,7 @@
 title: Content Enricher
 description: "Implement the Content Enricher pattern with WSO2 Integrator."
 sidebar_position: 20
-slug: /develop-and-test/integration-patterns/content-enricher
+slug: /guides/enterprise-integration-patterns/content-enricher
 sidebar_custom_props: { "separatorBefore": "Message Transformation" }
 ---
 
@@ -30,8 +30,8 @@ The [design canvas](../../editor/views/integration-view.md#design-canvas) shows 
 
 <PatternImage src="/img/eip-patterns/content_enricher_design.png" alt="Content Enricher design canvas in WSO2 Integrator" width={760} />
 
-1. Create an [HTTP service](../integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `BankAccountReq` payload.
-2. Add HTTP client connections for the IBAN lookup service and the Intuit QuickBooks API. See [adding a connection](../integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
+1. Create an [HTTP service](../../develop-and-test/integration-artifacts/integration-as-api/http.md#creating-an-http-service) with a `post` resource that accepts the `BankAccountReq` payload.
+2. Add HTTP client connections for the IBAN lookup service and the Intuit QuickBooks API. See [adding a connection](../../develop-and-test/integration-artifacts/supportive-artifacts/connections.md#adding-a-connection).
 3. In the flow, build the `IbanRequest` from the country and account number in the message and call the IBAN service to retrieve the bank code.
 4. Post the original request merged with the retrieved `bankCode` to the QuickBooks bank accounts endpoint, and return the created `BankAccount`.
 
@@ -92,7 +92,7 @@ service /finance on httpListener {
 </PatternImplementationTabs>
 
 :::tip Build it visually with the Data Mapper
-The enriched `BankAccount` is assembled in code here, but the [Data Mapper](../integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md) can combine multiple inputs (the original request and the IBAN lookup result) into the target record visually.
+The enriched `BankAccount` is assembled in code here, but the [Data Mapper](../../develop-and-test/integration-artifacts/supportive-artifacts/data-mapper/data-mapper.md) can combine multiple inputs (the original request and the IBAN lookup result) into the target record visually.
 :::
 
 ## Complete sample
