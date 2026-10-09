@@ -28,8 +28,8 @@ The visual designer exposes five type kinds: **Record**, **Enum**, **Service Cla
    <ThemedImage
        alt="WSO2 Integrator sidebar showing the project structure with Types listed"
        sources={{
-           light: useBaseUrl('/img/develop/integration-artifacts/supporting/types/step-1.png'),
-           dark: useBaseUrl('/img/develop/integration-artifacts/supporting/types/step-1.png'),
+           light: useBaseUrl('/img/develop/integration-artifacts/supporting/types/step-1-v5.1.png'),
+           dark: useBaseUrl('/img/develop/integration-artifacts/supporting/types/step-1-v5.1.png'),
        }}
    />
 
@@ -268,8 +268,8 @@ Use the pencil and trash icons next to **init** in the **Constructor** section t
 <ThemedImage
     alt="Service Class Designer showing Constructor, Class Variables, and Methods sections"
     sources={{
-        light: useBaseUrl('/img/develop/integration-artifacts/supporting/types/service-class-designer.png'),
-        dark: useBaseUrl('/img/develop/integration-artifacts/supporting/types/service-class-designer.png'),
+        light: useBaseUrl('/img/develop/integration-artifacts/supporting/types/service-class-designer-v5.1.png'),
+        dark: useBaseUrl('/img/develop/integration-artifacts/supporting/types/service-class-designer-v5.1.png'),
     }}
 />
 
